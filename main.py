@@ -1,10 +1,10 @@
 import argparse
 import numpy as np
-from student import Policy
+from agent import Agent
 import gymnasium as gym
 
 def evaluate(env=None, n_episodes=1, render=False):
-    agent = Policy()
+    agent = Agent()
     agent.load()
 
     env = gym.make('CarRacing-v2', continuous=agent.continuous)
@@ -29,7 +29,7 @@ def evaluate(env=None, n_episodes=1, render=False):
 
 
 def train():
-    agent = Policy()
+    agent = Agent()
     agent.train()
     agent.save()
 
